@@ -1,0 +1,22 @@
+<!-- main page file, prompts the user to enter their name -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Jokers</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body> 
+    <div class="title"><h1>Practical Jokers</h1></div>
+    <!-- welcome message -->
+    <p><u>Welcome! Enter your name to get a fun joke!</u></p>
+    <h1>Get a Joke</h1>
+
+    <!-- use post method to get the name from the input and to get the joke -->
+    <form action="/get-joke" method="POST">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <button type="submit">Get Joke</button>
+    </form>
+</body>
+</html>

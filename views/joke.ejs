@@ -1,0 +1,30 @@
+<!-- displaying the joke from the api -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Jokers</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body> 
+    <div class="title"><h1>Practical Jokers</h1></div>
+
+    <!-- use the name of the user for personalization -->
+    <h1>Here's a joke for you, <%= joke.name %>!</h1>
+    <div class="joke-container">
+
+    <!-- there are single jokes and jokes with a setup and delivery, displaying appropriately -->
+
+    <!-- only one line for a single joke -->
+    <% if (joke.type === 'single') { %>
+        <p><%= joke.joke %></p>
+
+    <!-- two lines for setup and delivery -->
+    <% } else { %>
+        <p><%= joke.setup %></p>
+        <p><%= joke.delivery %></p>
+    <% } %>
+    </div>
+</body>
+</html>
