@@ -30,10 +30,11 @@ app.post('/getJoke', async (req, res) => {
 
         // render with the given joke
         res.render('joke', { joke: jokeData });
+        
     // if theres an issue in getting the joke, show error message
     } catch (error) {
         // render with error
-        res.render('index', { message: 'Failed to fetch a joke. Please try again.' });
+        res.render('index', { error: 'Failed to fetch a joke. Please try again.' });
     }
 });
 
