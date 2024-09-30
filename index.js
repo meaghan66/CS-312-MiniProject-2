@@ -3,7 +3,10 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 
+// setup for view and css
 app.set('view engine', 'ejs');
+
+// for the view and request data
 app.use(express.urlencoded({ extended: true }));
 
 // retrieve the css styling
@@ -14,8 +17,8 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-
-app.post('/get-joke', async (req, res) => {
+// get the joke from the api with the given name
+app.post('/getJoke', async (req, res) => {
     // try to get the joke from the api
     try {
         // get the api response
@@ -30,7 +33,7 @@ app.post('/get-joke', async (req, res) => {
     // if theres an issue in getting the joke, show error message
     } catch (error) {
         // render with error
-        res.render('error', { message: 'Failed to fetch a joke. Please try again.' });
+        res.render('index', { message: 'Failed to fetch a joke. Please try again.' });
     }
 });
 
